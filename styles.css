@@ -29,7 +29,7 @@ body {
     color: white;
 }
 
-.t-place, .t-sTime, .t-fTime, .t-summary, .t-note{
+.t-place, .t-sTime, .t-fTime, .t-summary, .t-note, .t-cost{
     display: flex;
     justify-content: center;
     padding: 12px;
