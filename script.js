@@ -5,7 +5,7 @@ window.onload = function()
     const fTimes = document.querySelectorAll('.t-fTime');
     const summaries = document.querySelectorAll('.t-summary');
     const costs = document.querySelectorAll('.t-cost');
-    
+    const tables = document.querySelectorAll('.table');
     let placeWidth = 0;
     let sTimeWidth = 0;
     let fTimeWidth = 0;
@@ -56,4 +56,6 @@ window.onload = function()
     });
     costs.forEach(e=>e.style.width = costsWidth + 'px');
     ///
+    let tableMinWidth = placeWidth + sTimeWidth + fTimeWidth + sTimeWidth + costsWidth + 300;
+    tables.forEach(e=>e.style.minWidth = tableMinWidth + 'px');
 };
