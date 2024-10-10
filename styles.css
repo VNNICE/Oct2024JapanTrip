@@ -35,6 +35,7 @@ body {
     padding: 12px;
     border: 1px solid #ddd;
     text-align: left;
+    flex: 0 1 auto;
 }
 
 .t-note{
@@ -45,12 +46,4 @@ body {
 
 .t-summary{
     width: auto;
-}
-
-.row:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.row:hover {
-    background-color: #ddd;
 }
