@@ -12,7 +12,11 @@ window.onload = function()
     let summariesWidth = 0;
     let costsWidth = 0;
     
-    //Place
+    SetWidth(places, placeWidth);
+    SetWidth(sTimes, sTimeWidth);
+    SetWidth(fTimes, fTimeWidth);
+    SetWidth(summaries, summariesWidth);
+    /*
     places.forEach(e => {
         if (placeWidth < e.scrollWidth){
             placeWidth = e.scrollWidth;
@@ -49,9 +53,11 @@ window.onload = function()
     });
     summaries.forEach(e=>e.style.width = summariesWidth + 'px');
     ///
+    */
 
     //
     costs.forEach(e => {
+        e.textContent = formatCurrency(e.textContent);
         if (costsWidth < e.scrollWidth){
             costsWidth = e.scrollWidth;
         } 
@@ -59,16 +65,30 @@ window.onload = function()
     costs.forEach(e=>e.style.width = costsWidth + 'px');
     ///
     let tableMinWidth = placeWidth + sTimeWidth + fTimeWidth + sTimeWidth + costsWidth + 300;
-
     tables.forEach(e=>e.style.minWidth = tableMinWidth + 'px');
-    
     tables.forEach(table => {
         const costElements = table.querySelectorAll('.t-cost'); 
         let totalCost = 0;
         costElements.forEach(e => {
-            totalCost += parseInt(e.textContent) || 0; 
+            totalCost += parseInt(e.textContent.replace(/[^0-9]/g, '')) || 0; 
         });
         const totalCostElement = table.querySelector('#totalCost');
-        totalCostElement.textContent = '계: ' + totalCost +'엔'; 
+        totalCostElement.textContent = '계: ' + formatCurrency(totalCost); 
     });
 };
+function SetWidth(attribute, attributeWidth){
+    attribute.forEach(e => {
+        if (attributeWidth < e.scrollWidth){
+            attributeWidth = e.scrollWidth;
+        } 
+    });
+    attribute.forEach(e=> e.style.width = attributeWidth + 'px');
+}
+
+function formatCurrency(amount) {
+    return new Intl.NumberFormat('ja-JP', {
+        style: 'currency',
+        currency: 'JPY',
+        minimumFractionDigits: 0, 
+    }).format(amount);
+}
