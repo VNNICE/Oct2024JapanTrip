@@ -5,9 +5,8 @@ body {
 
 .table {
     display: flex;
-
     flex-direction: column;
-    width: 80%;
+    width: 90%;
     margin: 20px auto;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -38,13 +37,19 @@ body {
     text-align: left;
     flex: 0 1 auto;
 }
-
 .t-note{
     flex:1;
+    justify-content: left;
     overflow: hidden;
     white-space: normal;
 }
 
 .t-summary{
     width: auto;
+}
+
+.totalCost{
+    display: flex;
+    font-weight: bold;
+    text-align: left;
 }
