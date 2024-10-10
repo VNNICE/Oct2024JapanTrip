@@ -51,5 +51,6 @@ body {
 .totalCost{
     display: flex;
     font-weight: bold;
+    margin: 5px;
     text-align: left;
 }
