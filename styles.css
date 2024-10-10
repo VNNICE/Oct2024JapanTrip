@@ -39,6 +39,8 @@ body {
 
 .t-note{
     flex:1;
+    overflow: hidden;
+    white-space: normal;
 }
 
 .t-summary{
