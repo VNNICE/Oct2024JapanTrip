@@ -1,26 +1,41 @@
+const places = document.querySelectorAll('.t-place');
+const sTimes = document.querySelectorAll('.t-sTime');
+const fTimes = document.querySelectorAll('.t-fTime');
+const summaries = document.querySelectorAll('.t-summary');
+const costs = document.querySelectorAll('.t-cost');
+const tables = document.querySelectorAll('.table');
+const today = document.querySelector('header');
+
+let placeWidth = 0;
+let sTimeWidth = 0;
+let fTimeWidth = 0;
+let summariesWidth = 0;
+let costsWidth = 0;
+
+RealTimeClock();
+setInterval(RealTimeClock, 1000);
 window.onload = function()
 {
-    const places = document.querySelectorAll('.t-place');
-    const sTimes = document.querySelectorAll('.t-sTime');
-    const fTimes = document.querySelectorAll('.t-fTime');
-    const summaries = document.querySelectorAll('.t-summary');
-    const costs = document.querySelectorAll('.t-cost');
-    const tables = document.querySelectorAll('.table');
-    
-    let placeWidth = 0;
-    let sTimeWidth = 0;
-    let fTimeWidth = 0;
-    let summariesWidth = 0;
-    let costsWidth = 0;
-    
     SetWidth(places, placeWidth);
     SetWidth(sTimes, sTimeWidth);
     SetWidth(fTimes, fTimeWidth);
     SetWidth(summaries, summariesWidth);
     SetWidthByCost(costs, costsWidth);
+    TotalCostCalculation(tables);
+};
 
-    tables.forEach(table=> table.style.minWidth = 750 +'px');
+function RealTimeClock(){
+    const date = new Date();
+    const year = String(date.getFullYear());
+    const month = String(date.getMonth()).padStart(2, '0');
+    const day = String(date.getDay()).padStart(2, '0');
+    const hour = String(date.getHours()).padStart(2, '0');
+    const minute = String(date.getMinutes()).padStart(2, '0');
+    const second = String(date.getSeconds()).padStart(2, '0');
+    today.innerText = `${year}년 ${month}월 ${day}일 ${hour}:${minute}:${second}`
+}
 
+function TotalCostCalculation(tables){
     tables.forEach(table => {
         const costElements = table.querySelectorAll('.t-cost'); 
         let totalCost = 0;
@@ -30,7 +45,7 @@ window.onload = function()
         const totalCostElement = table.querySelector('#totalCost');
         totalCostElement.textContent = '계: ' + formatCurrency(totalCost); 
     });
-};
+}
 
 function SetWidthByCost(costs, costsWidth){
     costs.forEach(e => {
