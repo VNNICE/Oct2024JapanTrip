@@ -5,6 +5,8 @@ const summaries = document.querySelectorAll('.t-summary');
 const costs = document.querySelectorAll('.t-cost');
 const tables = document.querySelectorAll('.table');
 const today = document.querySelector('.today');
+const nLink = document.querySelectorAll('n-link');
+const schedules = document.querySelectorAll('.schedule');
 
 let placeWidth = 0;
 let sTimeWidth = 0;
@@ -14,6 +16,8 @@ let costsWidth = 0;
 
 RealTimeClock();
 setInterval(RealTimeClock, 1000);
+
+
 window.onload = function()
 {
     SetWidth(places, placeWidth);
@@ -22,7 +26,24 @@ window.onload = function()
     SetWidth(summaries, summariesWidth);
     SetWidthByCost(costs, costsWidth);
     TotalCostCalculation(tables);
+    CreateNlinksFromSchedules();
 };
+
+function CreateNlinksFromSchedules(){
+    const nLinkGroup = document.getElementById('n-links');
+    
+    schedules.forEach(schedule => {
+        const date = schedule.textContent.trim();
+        const e_nlink = document.createElement('n-link');
+        e_nlink.textContent = date;
+        
+        e_nlink.addEventListener('click', function(){
+            schedule.scrollIntoView({behavior: 'smooth', block: 'start'});
+        });
+        
+        nLinkGroup.appendChild(e_nlink);
+    });
+}
 
 function RealTimeClock(){
     const date = new Date();

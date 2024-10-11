@@ -7,197 +7,185 @@
         <title>ScheduleTable</title>
     </head>
     <body>
-    <!--Template, Do Ctrl+C Ctrl+V-->
-    <!--
-     <div class="table">
-            <div class="schedule">mm/dd</div>
-            <div class="attribute">
-                <div class="t-place">장소</div>
-                <div class="t-sTime">시작 시간</div>
-                <div class="t-fTime">종료 시간</div>
-                <div class="t-summary">개요</div>
-                <div class="t-cost">비용</div>
-                <div class="t-note">비고</div>
-            </div>
-            <div class="data">
-                <div class="t-place">미정</div>
-                <div class="t-sTime">00:00</div>
-                <div class="t-fTime">00:00</div>
-                <div class="t-summary">저녁밥</div>
-                <div class="t-cost">0</div>
-                <div class="t-note">미정</div>           
-            </div>
-            <div class="totalCost" id="totalCost">0</div>
+    <header>
+        <div class="today">Date</div>
+    </header>
+    <main>
+        <div class="nav-wrap">
+            <nav id = "n-links">
+                
+            </nav>
         </div>
-    -->
-    
-    <div class="today">Date</div>
-    <div class="table">
-        <div class="schedule">10/27</div>
-        <div class="attribute">
-            <div class="t-place">장소</div>
-            <div class="t-sTime">시작 시간</div>
-            <div class="t-fTime">종료 시간</div>
-            <div class="t-summary">개요</div>
-            <div class="t-cost">비용</div>
-            <div class="t-note">비고</div>
-        </div>
-        <div class="data">
-            <div class="t-place">미정</div>
-            <div class="t-sTime">00:00</div>
-            <div class="t-fTime">00:00</div>
-            <div class="t-summary">미정</div>
-            <div class="t-cost">0</div>
-            <div class="t-note">미정</div>           
-        </div>
-        <div class="totalCost" id="totalCost">0</div>
-    </div>
-    
-    <div class="table">
-        <div class="schedule">10/28</div>
-        <div class="attribute">
-            <div class="t-place">장소</div>
-            <div class="t-sTime">시작 시간</div>
-            <div class="t-fTime">종료 시간</div>
-            <div class="t-summary">개요</div>
-            <div class="t-cost">비용</div>
-            <div class="t-note">비고</div>
-        </div>
-        <div class="data">
-            <div class="t-place">미정</div>
-            <div class="t-sTime">00:00</div>
-            <div class="t-fTime">00:00</div>
-            <div class="t-summary">미정</div>
-            <div class="t-cost">0</div>
-            <div class="t-note">미정</div>           
-        </div>
-        <div class="totalCost" id="totalCost">0</div>
-    </div>
+        <div class="table-wrap">
 
-        <div class="table">
-            <div class="schedule">10/29</div>
-            <div class="attribute">
-                <div class="t-place">장소</div>
-                <div class="t-sTime">시작 시간</div>
-                <div class="t-fTime">종료 시간</div>
-                <div class="t-summary">개요</div>
-                <div class="t-cost">비용</div>
-                <div class="t-note">비고</div>
+            <div class="table">
+                <div class="schedule">10/27</div>
+                <div class="attribute">
+                    <div class="t-place">장소</div>
+                    <div class="t-sTime">시작 시간</div>
+                    <div class="t-fTime">종료 시간</div>
+                    <div class="t-summary">개요</div>
+                    <div class="t-cost">비용</div>
+                    <div class="t-note">비고</div>
+                </div>
+                <div class="data">
+                    <div class="t-place">미정</div>
+                    <div class="t-sTime">00:00</div>
+                    <div class="t-fTime">00:00</div>
+                    <div class="t-summary">미정</div>
+                    <div class="t-cost">0</div>
+                    <div class="t-note">미정</div>           
+                </div>
+                <div class="totalCost" id="totalCost">0</div>
             </div>
-            <div class="data">
-                <div class="t-place">미정</div>
-                <div class="t-sTime">00:00</div>
-                <div class="t-fTime">00:00</div>
-                <div class="t-summary">미정</div>
-                <div class="t-cost">0</div>
-                <div class="t-note">미정</div>           
+            
+            <div class="table">
+                <div class="schedule">10/28</div>
+                <div class="attribute">
+                    <div class="t-place">장소</div>
+                    <div class="t-sTime">시작 시간</div>
+                    <div class="t-fTime">종료 시간</div>
+                    <div class="t-summary">개요</div>
+                    <div class="t-cost">비용</div>
+                    <div class="t-note">비고</div>
+                </div>
+                <div class="data">
+                    <div class="t-place">미정</div>
+                    <div class="t-sTime">00:00</div>
+                    <div class="t-fTime">00:00</div>
+                    <div class="t-summary">미정</div>
+                    <div class="t-cost">0</div>
+                    <div class="t-note">미정</div>           
+                </div>
+                <div class="totalCost" id="totalCost">0</div>
             </div>
-            <div class="totalCost" id="totalCost">0</div>
-        </div>
 
-        <div class="table">
-            <div class="schedule">10/30</div>
-            <div class="attribute">
-                <div class="t-place">장소</div>
-                <div class="t-sTime">시작 시간</div>
-                <div class="t-fTime">종료 시간</div>
-                <div class="t-summary">개요</div>
-                <div class="t-cost">비용</div>
-                <div class="t-note">비고</div>
+            <div class="table">
+                <div class="schedule">10/29</div>
+                <div class="attribute">
+                    <div class="t-place">장소</div>
+                    <div class="t-sTime">시작 시간</div>
+                    <div class="t-fTime">종료 시간</div>
+                    <div class="t-summary">개요</div>
+                    <div class="t-cost">비용</div>
+                    <div class="t-note">비고</div>
+                </div>
+                <div class="data">
+                    <div class="t-place">미정</div>
+                    <div class="t-sTime">00:00</div>
+                    <div class="t-fTime">00:00</div>
+                    <div class="t-summary">미정</div>
+                    <div class="t-cost">0</div>
+                    <div class="t-note">미정</div>           
+                </div>
+                <div class="totalCost" id="totalCost">0</div>
             </div>
-            <div class="data">
-                <div class="t-place">미정</div>
-                <div class="t-sTime">00:00</div>
-                <div class="t-fTime">00:00</div>
-                <div class="t-summary">미정</div>
-                <div class="t-cost">0</div>
-                <div class="t-note">미정</div>           
+
+            <div class="table">
+                <div class="schedule">10/30</div>
+                <div class="attribute">
+                    <div class="t-place">장소</div>
+                    <div class="t-sTime">시작 시간</div>
+                    <div class="t-fTime">종료 시간</div>
+                    <div class="t-summary">개요</div>
+                    <div class="t-cost">비용</div>
+                    <div class="t-note">비고</div>
+                </div>
+                <div class="data">
+                    <div class="t-place">미정</div>
+                    <div class="t-sTime">00:00</div>
+                    <div class="t-fTime">00:00</div>
+                    <div class="t-summary">미정</div>
+                    <div class="t-cost">0</div>
+                    <div class="t-note">미정</div>           
+                </div>
+                <div class="totalCost" id="totalCost">0</div>
             </div>
-            <div class="totalCost" id="totalCost">0</div>
-        </div>
 
 
-        <div class="table">
-            <div class="schedule">10/31</div>
-            <div class="attribute">
-                <div class="t-place">장소</div>
-                <div class="t-sTime">시작 시간</div>
-                <div class="t-fTime">종료 시간</div>
-                <div class="t-summary">개요</div>
-                <div class="t-cost">비용</div>
-                <div class="t-note">비고</div>
+            <div class="table">
+                <div class="schedule">10/31</div>
+                <div class="attribute">
+                    <div class="t-place">장소</div>
+                    <div class="t-sTime">시작 시간</div>
+                    <div class="t-fTime">종료 시간</div>
+                    <div class="t-summary">개요</div>
+                    <div class="t-cost">비용</div>
+                    <div class="t-note">비고</div>
+                </div>
+                <div class="data">
+                    <div class="t-place">히로시마역</div>
+                    <div class="t-sTime">18:00</div>
+                    <div class="t-fTime">19:30</div>
+                    <div class="t-summary">저녁밥</div>
+                    <div class="t-cost">2000</div>
+                    <div class="t-note">오꼬노미야끼&nbsp;<a href="https://maps.app.goo.gl/DMV2VQiZyRJFD3cQ7">로페즈</a></div>           
+                </div>
+                <div class="data">
+                    <div class="t-place">히로시마역</div>
+                    <div class="t-sTime">19:30</div>
+                    <div class="t-fTime">?</div>
+                    <div class="t-summary">미정</div>
+                    <div class="t-cost">0</div>
+                    <div class="t-note">미정</div>           
+                </div>
+                <div class="totalCost" id="totalCost">0</div>
             </div>
-            <div class="data">
-                <div class="t-place">히로시마역</div>
-                <div class="t-sTime">18:00</div>
-                <div class="t-fTime">19:30</div>
-                <div class="t-summary">저녁밥</div>
-                <div class="t-cost">2000</div>
-                <div class="t-note">오꼬노미야끼&nbsp;<a href="https://maps.app.goo.gl/DMV2VQiZyRJFD3cQ7">로페즈</a></div>           
-            </div>
-            <div class="data">
-                <div class="t-place">히로시마역</div>
-                <div class="t-sTime">19:30</div>
-                <div class="t-fTime">?</div>
-                <div class="t-summary">미정</div>
-                <div class="t-cost">0</div>
-                <div class="t-note">미정</div>           
-            </div>
-            <div class="totalCost" id="totalCost">0</div>
-        </div>
 
-        <div class="table">
-            <div class="schedule">11/1</div>
-            <div class="attribute">
-                <div class="t-place">장소</div>
-                <div class="t-sTime">시작 시간</div>
-                <div class="t-fTime">종료 시간</div>
-                <div class="t-summary">개요</div>
-                <div class="t-cost">비용</div>
-                <div class="t-note">비고</div>
+            <div class="table">
+                <div class="schedule">11/1</div>
+                <div class="attribute">
+                    <div class="t-place">장소</div>
+                    <div class="t-sTime">시작 시간</div>
+                    <div class="t-fTime">종료 시간</div>
+                    <div class="t-summary">개요</div>
+                    <div class="t-cost">비용</div>
+                    <div class="t-note">비고</div>
+                </div>
+                <div class="data">
+                    <div class="t-place">히로시마역</div>
+                    <div class="t-sTime">08:30</div>
+                    <div class="t-fTime">08:58</div>
+                    <div class="t-summary">미야지마구치역으로 이동</div>
+                    <div class="t-cost">420</div>
+                    <div class="t-note">미야지마구치역으로 이동</a></div>         
+                </div>
+                <div class="data">
+                    <div class="t-place">미야지마구치삼바시</div>
+                    <div class="t-sTime">09:10</div>
+                    <div class="t-fTime">09:20</div>
+                    <div class="t-summary">페리 타고 이쓰쿠시마로 이동</div>
+                    <div class="t-cost">200</div>
+                    <div class="t-note">미야지마구치삼바시(宮島口桟橋)→미야지마삼바시(宮島桟橋)&nbsp;<a href="https://jr-miyajimaferry.co.jp/timetable/">시간표</a></div>         
+                </div>
+                <div class="data">
+                    <div class="t-place">이쓰쿠시마</div>
+                    <div class="t-sTime">09:20</div>
+                    <div class="t-fTime">12:20</div>
+                    <div class="t-summary">이쓰쿠시마 관광</div>
+                    <div class="t-cost">1000</div>
+                    <div class="t-note"></a>이쓰쿠시마신사, 길거리 음식 등등&nbsp;<a href="https://www.travelwith.jp/area/chugoku/hiroshima/topics/post-13525/">참조 사이트</a></div>         
+                </div>
+                <div class="data">
+                    <div class="t-place">가나야마쵸역</div>
+                    <div class="t-sTime">17:00</div>
+                    <div class="t-fTime">17:30</div>
+                    <div class="t-summary">비어스탠드 시게토미</div>
+                    <div class="t-cost">1500</div>
+                    <div class="t-note">맥주 소믈리에 가게</div>         
+                </div>
+                <div class="data">
+                    <div class="t-place">히로시마역</div>
+                    <div class="t-sTime">20:02</div>
+                    <div class="t-fTime">23:45</div>
+                    <div class="t-summary">도쿄로 이동</div>
+                    <div class="t-cost">19960</div>
+                    <div class="t-note">신칸센</div>         
+                </div>
+                <div class="totalCost" id="totalCost">0</div>
             </div>
-            <div class="data">
-                <div class="t-place">히로시마역</div>
-                <div class="t-sTime">08:30</div>
-                <div class="t-fTime">08:58</div>
-                <div class="t-summary">미야지마구치역으로 이동</div>
-                <div class="t-cost">420</div>
-                <div class="t-note">미야지마구치역으로 이동</a></div>         
-            </div>
-            <div class="data">
-                <div class="t-place">미야지마구치삼바시</div>
-                <div class="t-sTime">09:10</div>
-                <div class="t-fTime">09:20</div>
-                <div class="t-summary">페리 타고 이쓰쿠시마로 이동</div>
-                <div class="t-cost">200</div>
-                <div class="t-note">미야지마구치삼바시(宮島口桟橋)→미야지마삼바시(宮島桟橋)&nbsp;<a href="https://jr-miyajimaferry.co.jp/timetable/">시간표</a></div>         
-            </div>
-            <div class="data">
-                <div class="t-place">이쓰쿠시마</div>
-                <div class="t-sTime">09:20</div>
-                <div class="t-fTime">12:20</div>
-                <div class="t-summary">이쓰쿠시마 관광</div>
-                <div class="t-cost">1000</div>
-                <div class="t-note"></a>이쓰쿠시마신사, 길거리 음식 등등&nbsp;<a href="https://www.travelwith.jp/area/chugoku/hiroshima/topics/post-13525/">참조 사이트</a></div>         
-            </div>
-            <div class="data">
-                <div class="t-place">가나야마쵸역</div>
-                <div class="t-sTime">17:00</div>
-                <div class="t-fTime">17:30</div>
-                <div class="t-summary">비어스탠드 시게토미</div>
-                <div class="t-cost">1500</div>
-                <div class="t-note">맥주 소믈리에 가게</div>         
-            </div>
-            <div class="data">
-                <div class="t-place">히로시마역</div>
-                <div class="t-sTime">20:02</div>
-                <div class="t-fTime">23:45</div>
-                <div class="t-summary">도쿄로 이동</div>
-                <div class="t-cost">19960</div>
-                <div class="t-note">신칸센</div>         
-            </div>
-            <div class="totalCost" id="totalCost">0</div>
         </div>
-        <script src="script.js"></script>
+    </main>
+    <script src="script.js"></script>
     </body>
 </html>
