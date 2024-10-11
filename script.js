@@ -4,7 +4,7 @@ const fTimes = document.querySelectorAll('.t-fTime');
 const summaries = document.querySelectorAll('.t-summary');
 const costs = document.querySelectorAll('.t-cost');
 const tables = document.querySelectorAll('.table');
-const today = document.querySelector('header');
+const today = document.querySelector('.today');
 
 let placeWidth = 0;
 let sTimeWidth = 0;
