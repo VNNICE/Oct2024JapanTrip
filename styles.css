@@ -4,9 +4,10 @@ body {
 }
 
 header{
-    position: fixed;
+    position: sticky;
     display: flex;
     width: 100%;
+    margin: 20px auto;
     justify-content: center;
     font-weight: bold;
     top: 0;
@@ -26,7 +27,7 @@ main{
     background-color: black;
 }
 nav{
-    position: fixed;
+    position: sticky;
     top: 25px;
     display: flex;
     flex-direction: column;
@@ -43,7 +44,6 @@ n-link:hover {
 }
 
 .table-wrap{
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
 }
