@@ -17,6 +17,22 @@ window.onload = function()
     SetWidth(sTimes, sTimeWidth);
     SetWidth(fTimes, fTimeWidth);
     SetWidth(summaries, summariesWidth);
+    SetWidthByCost(costs, costsWidth);
+
+    tables.forEach(table=> table.style.minWidth = 750 +'px');
+
+    tables.forEach(table => {
+        const costElements = table.querySelectorAll('.t-cost'); 
+        let totalCost = 0;
+        costElements.forEach(e => {
+            totalCost += parseInt(e.textContent.replace(/[^0-9]/g, '')) || 0; 
+        });
+        const totalCostElement = table.querySelector('#totalCost');
+        totalCostElement.textContent = '계: ' + formatCurrency(totalCost); 
+    });
+};
+
+function SetWidthByCost(costs, costsWidth){
     costs.forEach(e => {
         const originalValue = e.textContent;
         const formattedValue = formatCurrency(e.textContent);
@@ -28,19 +44,7 @@ window.onload = function()
         } 
     });
     costs.forEach(e=>e.style.width = costsWidth + 'px');
-
-    let tableMinWidth = placeWidth + sTimeWidth + fTimeWidth + sTimeWidth + costsWidth + 300;
-    tables.forEach(e=>e.style.minWidth = tableMinWidth + 'px');
-    tables.forEach(table => {
-        const costElements = table.querySelectorAll('.t-cost'); 
-        let totalCost = 0;
-        costElements.forEach(e => {
-            totalCost += parseInt(e.textContent.replace(/[^0-9]/g, '')) || 0; 
-        });
-        const totalCostElement = table.querySelector('#totalCost');
-        totalCostElement.textContent = '계: ' + formatCurrency(totalCost); 
-    });
-};
+}
 
 function SetWidth(attribute, attributeWidth){
     attribute.forEach(e => {
