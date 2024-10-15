@@ -4,9 +4,10 @@ const fTimes = document.querySelectorAll('.t-fTime');
 const summaries = document.querySelectorAll('.t-summary');
 const costs = document.querySelectorAll('.t-cost');
 const tables = document.querySelectorAll('.table');
-const today = document.querySelector('.today');
+const timer = document.querySelector('.timer');
 const nLink = document.querySelectorAll('n-link');
 const schedules = document.querySelectorAll('.schedule');
+const globalDate = new Date('2024-10-26T15:00:00');
 
 let placeWidth = 0;
 let sTimeWidth = 0;
@@ -27,7 +28,50 @@ window.onload = function()
     SetWidthByCost(costs, costsWidth);
     TotalCostCalculation(tables);
     CreateNlinksFromSchedules();
+    ShowTodaysSchedule();
 };
+
+function ShowTodaysSchedule()
+{
+    tables.forEach(table=>
+        { 
+            const selectedSchedule = table.querySelector('.schedule');
+            const nowDate = new Date(globalDate.getFullYear(), globalDate.getMonth(), globalDate.getDate());
+
+            const [targetMonth, targetDay] = selectedSchedule.textContent.split('/').map(Number);
+            const targetDate = new Date(globalDate.getFullYear(), targetMonth - 1, targetDay);
+            if(nowDate < targetDate) 
+            {
+                return;
+            }
+            const targetData = selectedSchedule.querySelectorAll('.data');
+            if (nowDate.toDateString() === targetDate.toDateString())
+                {
+                    targetData.forEach(data=>
+                    {
+                        const startTime = data.querySelector('.t-stime')?.textContent;
+                        const endTime = data.querySelector('.t-ftime')?.textContent;        
+                        const [startHour, startMinute] = startTime.split(':').map(Number);
+                        const [endHour, endMinute] = endTime.split(':').map(Number);
+        
+                        const targetStartTime = startHour * 60 + startMinute;
+                        const targetEndTime = endHour * 60 + endMinute;
+                        const nowTime = globalDate.getHours() * 60 + globalDate.getMinutes();
+                        alert(`${nowTime} and ${targetStartTime} and ${targetEndTime}`);
+                        if (nowTime >= targetStartTime && nowTime < targetEndTime) {
+                            data.style.backgroundColor = 'yellow';
+                        }
+                    });
+                }
+            else if(nowDate > targetDate)
+                {
+                    targetData.forEach(data=>{
+                        data.style.backgroundColor = 'gray';
+                        data.style.color = 'white';
+                    });
+                }
+        });
+}
 
 function CreateNlinksFromSchedules(){
     const nLinkGroup = document.getElementById('n-links');
@@ -53,7 +97,7 @@ function RealTimeClock(){
     const hour = String(date.getHours()).padStart(2, '0');
     const minute = String(date.getMinutes()).padStart(2, '0');
     const second = String(date.getSeconds()).padStart(2, '0');
-    today.innerText = `${year}년 ${month}월 ${day}일 ${hour}:${minute}:${second}`;
+    timer.innerText = `${year}년 ${month}월 ${day}일 ${hour}:${minute}:${second}`;
 }
 
 function TotalCostCalculation(tables){
