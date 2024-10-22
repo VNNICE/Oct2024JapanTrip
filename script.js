@@ -7,7 +7,7 @@ const tables = document.querySelectorAll('.table');
 const timer = document.querySelector('.timer');
 const nLink = document.querySelectorAll('n-link');
 const schedules = document.querySelectorAll('.schedule');
-const globalDate = new Date('2024-10-26T15:00:00');
+const globalDate = new Date();
 
 let placeWidth = 0;
 let sTimeWidth = 0;
@@ -33,44 +33,57 @@ window.onload = function()
 
 function ShowTodaysSchedule()
 {
-    tables.forEach(table=>
+    try
+    {
+        tables.forEach(table=>
         { 
             const selectedSchedule = table.querySelector('.schedule');
             const nowDate = new Date(globalDate.getFullYear(), globalDate.getMonth(), globalDate.getDate());
 
             const [targetMonth, targetDay] = selectedSchedule.textContent.split('/').map(Number);
             const targetDate = new Date(globalDate.getFullYear(), targetMonth - 1, targetDay);
-            if(nowDate < targetDate) 
-            {
-                return;
-            }
-            const targetData = selectedSchedule.querySelectorAll('.data');
-            if (nowDate.toDateString() === targetDate.toDateString())
+            if(nowDate < targetDate) return;            
+            const dataElements = table.querySelectorAll('.data');
+            if(nowDate > targetDate)
                 {
-                    targetData.forEach(data=>
+                    dataElements.forEach(data=>
                     {
-                        const startTime = data.querySelector('.t-stime')?.textContent;
-                        const endTime = data.querySelector('.t-ftime')?.textContent;        
+                        data.style.backgroundColor = 'gray';
+                        data.style.color = '#abb5bd';
+                    });
+                }
+            else if (nowDate.toDateString() === targetDate.toDateString())
+            {   
+                
+                dataElements.forEach(data=>
+                    {
+                        const startTime = data.querySelector('.t-sTime')?.textContent;
+                        const endTime = data.querySelector('.t-fTime')?.textContent;
                         const [startHour, startMinute] = startTime.split(':').map(Number);
                         const [endHour, endMinute] = endTime.split(':').map(Number);
         
                         const targetStartTime = startHour * 60 + startMinute;
                         const targetEndTime = endHour * 60 + endMinute;
                         const nowTime = globalDate.getHours() * 60 + globalDate.getMinutes();
-                        alert(`${nowTime} and ${targetStartTime} and ${targetEndTime}`);
+                        //alert(`${nowTime} and ${targetStartTime} and ${targetEndTime}`);
                         if (nowTime >= targetStartTime && nowTime < targetEndTime) {
                             data.style.backgroundColor = 'yellow';
                         }
-                    });
-                }
-            else if(nowDate > targetDate)
-                {
-                    targetData.forEach(data=>{
-                        data.style.backgroundColor = 'gray';
-                        data.style.color = 'white';
-                    });
-                }
+                        else if(nowTime > targetEndTime)
+                            {
+                                data.style.backgroundColor = 'gray';
+                                data.style.color = '#abb5bd';
+                            }
+                    })
+                throw new Error();
+            }
+
         });
+    }
+    catch(error)
+    {
+        //alert('Catched!');
+    }
 }
 
 function CreateNlinksFromSchedules(){
