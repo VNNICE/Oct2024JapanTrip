@@ -7,7 +7,7 @@ const tables = document.querySelectorAll('.table');
 const timer = document.querySelector('.timer');
 const nLink = document.querySelectorAll('n-link');
 const schedules = document.querySelectorAll('.schedule');
-const globalDate = new Date();
+const globalDate = new Date();//'2024-10-31T20:40:00'
 
 let placeWidth = 0;
 let sTimeWidth = 0;
@@ -30,6 +30,12 @@ window.onload = function()
     CreateNlinksFromSchedules();
     ShowTodaysSchedule();
 };
+function ExpirationFormat(elements)
+{
+    elements.style.backgroundColor = 'gray';
+    elements.style.color = '#abb5bd';
+    elements.style.textDecoration = 'line-through';
+}
 
 function ShowTodaysSchedule()
 {
@@ -48,8 +54,7 @@ function ShowTodaysSchedule()
                 {
                     dataElements.forEach(data=>
                     {
-                        data.style.backgroundColor = 'gray';
-                        data.style.color = '#abb5bd';
+                        ExpirationFormat(data);
                     });
                 }
             else if (nowDate.toDateString() === targetDate.toDateString())
@@ -68,21 +73,21 @@ function ShowTodaysSchedule()
                         //alert(`${nowTime} and ${targetStartTime} and ${targetEndTime}`);
                         if (nowTime >= targetStartTime && nowTime < targetEndTime) {
                             data.style.backgroundColor = 'yellow';
+                            data.scrollIntoView({behavior: 'smooth', block: 'start'});
                         }
                         else if(nowTime > targetEndTime)
                             {
-                                data.style.backgroundColor = 'gray';
-                                data.style.color = '#abb5bd';
+                                ExpirationFormat(data);
                             }
                     })
-                throw new Error();
+                throw new Error(_break);
             }
 
         });
     }
-    catch(error)
+    catch(_break)
     {
-        //alert('Catched!');
+        //alert('Break!');
     }
 }
 
