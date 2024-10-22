@@ -75,7 +75,7 @@ function ShowTodaysSchedule()
                             data.style.backgroundColor = 'yellow';
                             data.scrollIntoView({behavior: 'smooth', block: 'start'});
                         }
-                        else if(nowTime > targetEndTime)
+                        else if(nowTime >= targetEndTime)
                             {
                                 ExpirationFormat(data);
                             }
